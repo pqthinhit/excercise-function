@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập JavaScript - Buổi 5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light py-5">
+    <div class="container bg-white shadow-sm rounded p-4 w-75">
+        <div class="row">
+            <div class="col-12 col-md-3">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <button class="nav-link active mb-2" id="v-pills-bai1-tab" data-bs-toggle="pill" data-bs-target="#bai1" type="button" role="tab">Bài 1: Tuyển sinh</button>
+                    <button class="nav-link mb-2" id="v-pills-bai2-tab" data-bs-toggle="pill" data-bs-target="#bai2" type="button" role="tab">Bài 2: Tính tiền điện</button>
+                    <button class="nav-link mb-2" id="v-pills-bai3-tab" data-bs-toggle="pill" data-bs-target="#bai3" type="button" role="tab">Bài 3: Tính thuế TNCN</button>
+                    <button class="nav-link mb-2" id="v-pills-bai4-tab" data-bs-toggle="pill" data-bs-target="#bai4" type="button" role="tab">Bài 4: Tính tiền cáp</button>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-9">
+                <div class="tab-content" id="v-pills-tabContent">
+                    
+                    <div class="tab-pane fade show active" id="bai1" role="tabpanel" aria-labelledby="v-pills-bai1-tab">
+                        <h4 class="mb-4 text-primary">Quản lý tuyển sinh</h4>
+                        <form class="row g-3">
+                            <div class="col-md-4">
+                                <input type="number" class="form-control" id="inputScoreTarget" placeholder="Điểm chuẩn">
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-select" id="selLocation">
+                                    <option value="0">Chọn khu vực (Không ưu tiên)</option>
+                                    <option value="2">Khu vực A (2 điểm)</option>
+                                    <option value="1">Khu vực B (1 điểm)</option>
+                                    <option value="0.5">Khu vực C (0.5 điểm)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-select" id="selUser">
+                                    <option value="0">Chọn đối tượng (Không ưu tiên)</option>
+                                    <option value="2.5">Đối tượng 1 (2.5 điểm)</option>
+                                    <option value="1.5">Đối tượng 2 (1.5 điểm)</option>
+                                    <option value="1">Đối tượng 3 (1 điểm)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="number" class="form-control" id="inputScore1" placeholder="Điểm môn thứ 1">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="number" class="form-control" id="inputScore2" placeholder="Điểm môn thứ 2">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="number" class="form-control" id="inputScore3" placeholder="Điểm môn thứ 3">
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary" type="button" id="btnResult">Kết Quả</button>
+                            </div>
+                            <div class="col-12 mt-3">
+                                <div class="alert alert-success m-0" role="alert"><span id="txtResult">Vui lòng nhập thông tin...</span></div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="tab-pane fade" id="bai2" role="tabpanel" aria-labelledby="v-pills-bai2-tab">
+                        <h4 class="mb-4 text-primary">Tính tiền điện</h4>
+                        <form class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="inputElecName" placeholder="Nhập họ tên">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="number" class="form-control" id="inputKW" placeholder="Nhập số kW tiêu thụ">
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary" type="button" id="btnElecBill">Tính Tiền Điện</button>
+                            </div>
+                            <div class="col-12 mt-3">
+                                <div class="alert alert-success m-0" role="alert"><span id="txtElecBill">Vui lòng nhập thông tin...</span></div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="tab-pane fade" id="bai3" role="tabpanel" aria-labelledby="v-pills-bai3-tab">
+                        <h4 class="mb-4 text-primary">Tính thuế thu nhập cá nhân</h4>
+                        <form class="row g-3">
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" id="inputTaxName" placeholder="Nhập họ tên">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="number" class="form-control" id="inputSalary" placeholder="Tổng thu nhập năm (VNĐ)">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="number" class="form-control" id="inputDependents" placeholder="Số người phụ thuộc">
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary" type="button" id="btnTax">Tính Tiền Thuế</button>
+                            </div>
+                            <div class="col-12 mt-3">
+                                <div class="alert alert-success m-0" role="alert"><span id="txtTax">Vui lòng nhập thông tin...</span></div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="tab-pane fade" id="bai4" role="tabpanel" aria-labelledby="v-pills-bai4-tab">
+                        <h4 class="mb-4 text-primary">Tính tiền cáp</h4>
+                        <form class="row g-3">
+                            <div class="col-md-4">
+                                <select class="form-select" id="selCustomer" onchange="toggleConnectInput()">
+                                    <option value="">Chọn loại khách hàng</option>
+                                    <option value="user">Nhà dân</option>
+                                    <option value="company">Doanh nghiệp</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" id="inputCustomerID" placeholder="Nhập mã khách hàng">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="number" class="form-control" id="inputChannel" placeholder="Số kênh cao cấp">
+                            </div>
+                            <div class="col-md-4" id="divConnect" style="display: none;">
+                                <input type="number" class="form-control" id="inputConnect" placeholder="Số kết nối">
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary" type="button" id="btnNet">Tính Tiền Cáp</button>
+                            </div>
+                            <div class="col-12 mt-3">
+                                <div class="alert alert-success m-0" role="alert"><span id="txtNet">Vui lòng nhập thông tin...</span></div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
